@@ -1,6 +1,6 @@
 var axios = require('axios');
 
-let emotion = "happy";
+let emotion = "Happy";
 let energy= 0.6;
 let dancebility=0.5;
 let loudness = -0.4;
