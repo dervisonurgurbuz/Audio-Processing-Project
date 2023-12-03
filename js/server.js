@@ -9,13 +9,15 @@ app.get('/', (req, res) => {
    
     let emotionTag = req.query
     // console.log(emotionTag)
-    const musicList = fs.readFileSync('./data_moods.csv',
-    { encoding: 'utf8', flag: 'r' });
-    searchCSV(musicList,emotionTag.emotion)
-    // console.log(parseCSV(musicList))
-
- 
-    res.send('Request have been received :) ')
+    if(emotionTag.emotion === 'Happy' || emotionTag.emotion === 'Calm' || emotionTag.emotion === 'Energetic' || emotionTag.emotion === 'Sad'){
+      const musicList = fs.readFileSync('./data_moods.csv',
+      { encoding: 'utf8', flag: 'r' });
+      let data = searchCSV(musicList,emotionTag.emotion)
+      // console.log(parseCSV(musicList))
+      res.send(data)
+    }else{
+      res.status(500).send('Emotion Tag is not defined')
+    }
 
   })
 
@@ -41,12 +43,9 @@ function searchCSV(csvData,emotionTag) {
         if(obj.mood===emotionTag){
         console.log(obj.name)
         console.log(obj.mood)
+        data.push(obj); // Push the object to the data array
         }
-      }
-    
-
-
-      data.push(obj); // Push the object to the data array
+      }      
     }
   }
   // console.log(data)

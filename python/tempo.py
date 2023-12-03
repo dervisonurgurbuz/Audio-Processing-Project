@@ -1,7 +1,7 @@
 import librosa
 
 # It is written to analze tempo of the sound tracks in Beats Per Second
-fileName = 'Crema/1091_WSI_DIS_XX.wav'
+fileName = 'Crema/1091_WSI_NEU_XX.wav'
 
 # Load a built-in audio sample (example: Beat loop)
 y, sr = librosa.load(fileName)
