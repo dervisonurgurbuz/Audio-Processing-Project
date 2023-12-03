@@ -1,7 +1,7 @@
 var axios = require('axios');
 
-let emotion = "Calmd"; // Important: This needs to be Calm, Happy, Energetic or Sad
-let tempo = 100;
+let emotion = "Calm"; // Important: This needs to be Calm, Happy, Energetic or Sad
+let tempo = 101;
 
 var config = {
 

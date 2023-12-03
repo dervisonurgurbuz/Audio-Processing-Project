@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
     if(emotionTag.emotion === 'Happy' || emotionTag.emotion === 'Calm' || emotionTag.emotion === 'Energetic' || emotionTag.emotion === 'Sad'){
       const musicList = fs.readFileSync('./data_moods.csv',
       { encoding: 'utf8', flag: 'r' });
-      let data = searchCSV(musicList,emotionTag.emotion)
+      let data = searchCSV(musicList,emotionTag.emotion,emotionTag.tempo)
       // console.log(parseCSV(musicList))
       res.send(data)
     }else{
@@ -28,7 +28,7 @@ app.listen(port, () => {
   
 
      // Function to parse CSV data
-function searchCSV(csvData,emotionTag) {
+function searchCSV(csvData,emotionTag,tempo) {
   const rows = csvData.split('\r\n'); // Split the CSV data into rows
   const headers = rows[0].split(','); // Extract headers
   const data = [];
@@ -41,11 +41,15 @@ function searchCSV(csvData,emotionTag) {
         obj[headers[j]] = row[j]; // Create an object using header-value pairs
         // console.log(obj.mood)
         if(obj.mood===emotionTag){
-        console.log(obj.name)
-        console.log(obj.mood)
         data.push(obj); // Push the object to the data array
         }
       }      
+      if(tempo<100){
+        data.sort((a, b) => a.tempo - b.tempo) // When the tempo is low we are listing musics low BPS to low BPS
+      }else{
+        data.sort((a, b) => -(a.tempo - b.tempo))
+      }
+      
     }
   }
   // console.log(data)

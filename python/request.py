@@ -2,7 +2,7 @@ import requests
 
 # Sending request to Java Script Backend Server
 emotion = "Calm" # Important: This needs to be Calm, Happy, Energetic or Sad
-tempo =  98
+tempo =  101
 
 url = f"http://localhost:3004?emotion={emotion}&tempo={tempo}"
 headers = {}
