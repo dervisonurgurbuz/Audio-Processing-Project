@@ -287,3 +287,6 @@ cython_debug/
 *.flac
 
 *.wav
+
+python/data/
+python/audio_features.csv
