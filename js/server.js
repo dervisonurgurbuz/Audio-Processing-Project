@@ -52,3 +52,7 @@ function searchCSV(csvData,emotionTag) {
   // console.log(data)
   return data;
 }
+
+
+// Data is from
+// https://github.com/cristobalvch/Spotify-Machine-Learning/blob/master/data/data_moods.csv
