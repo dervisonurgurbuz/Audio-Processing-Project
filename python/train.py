@@ -3,13 +3,13 @@ import torch
 import random
 import CNNModel as CNN
 import MLPModel as MLP
-from torch.utils.data import Dataset, DataLoader
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 import warnings
 import utils
 warnings.simplefilter('ignore') # ignoring runtime warning if needed
 
+torch.cuda.manual_seed_all(42)
 
 SEED = 42
 batch_size = 32
