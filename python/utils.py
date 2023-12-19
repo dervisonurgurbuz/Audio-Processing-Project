@@ -4,8 +4,14 @@ import os
 import torch
 from torch.utils.data import Dataset, DataLoader
 import matplotlib.pyplot as plt
+import random
 import warnings
 warnings.simplefilter('ignore') # ignoring runtime warning if needed
+
+random.seed(42)
+np.random.seed(42)
+torch.manual_seed(42)
+torch.cuda.manual_seed_all(42)
 
 class CustomDataset(Dataset):
     def __init__(self, data, labels):
