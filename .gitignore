@@ -8,7 +8,7 @@ lerna-debug.log*
 .pnpm-debug.log*
 
 #Data
-*.csv
+# *.csv
 Crema
 Crema Version2
 Crema Version3
