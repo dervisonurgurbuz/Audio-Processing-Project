@@ -20,3 +20,21 @@
 
 ### Install Python Dependencies
 `pip3 install -r requirements.txt`
+
+# Folder structure of training data
+```
+data\
+     CremaV3\
+         HAP\
+             xxxx.waw
+             xxxx.waw
+             xxxx.waw
+         NEU\
+             xxxx.waw
+             xxxx.waw
+             xxxx.waw
+         SAD\
+             xxxx.waw
+             xxxx.waw
+             xxxx.waw
+```
