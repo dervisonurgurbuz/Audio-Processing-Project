@@ -19,4 +19,4 @@
 # Emotion Detection (Python)
 
 ### Install Python Dependencies
-`pip3 install torch torchvision torchaudio ipykernel requests`
+`pip3 install -r requirements.txt`
